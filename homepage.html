@@ -1,0 +1,578 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Homepage(Admin)</title>
+    <link rel="stylesheet" href="homepage.css" />
+  </head>
+  <body>
+    <div class="check_animation_div" id="check_animation_div">
+      <img src="assets/check-animation.gif" class="check-animation" />
+    </div>
+
+    <!-- Side bar -->
+    <div id="sidebar_div">
+      <section id="sidebar_frame">
+        <nav id="sidebar_nav">
+          <header id="top_header" style="display: none">
+            <img id="parser_profile" src="assets/profiles/profile_1.png" />
+            <span id="parser_username"></span>
+          </header>
+          <div id="bodysidebar_div">
+            <div
+              class="side_options_wrapper"
+              id="myCluster_btn"
+              style="display: none"
+            >
+              <span class="sidebar_options_lbl">My Clusters</span>
+              <button id="addCluster">Add</button>
+            </div>
+            <div
+              class="cluster_div"
+              id="cluster_div"
+              style="display: none"
+            ></div>
+            <div class="side_options_wrapper" style="display: none"></div>
+            <div class="side_options_wrapper" style="display: none"></div>
+          </div>
+          <footer id="bottom_footer">
+            <img
+              src="assets/icons/log-out-outline.svg"
+              alt=""
+              id="logout_btn"
+            />
+          </footer>
+        </nav>
+      </section>
+    </div>
+
+    <!-- Set up Academic Year -->
+    <div id="setupacad_div">
+      <div id="setupacadbody_div">
+        <nav class="canceladdstudent_nav">
+          <button id="canceladdacad_btn">
+            <img
+              class="canceladdstudent_img"
+              src="assets/icons/arrow-left-solid.svg"
+            />
+          </button>
+        </nav>
+        <nav class="canceladdstudent_header">
+          <label class="manage_lbl">Set Up Academic Year</label>
+          <div id="semesterdiv" class="modules">
+            <img
+              class="sadminicon sadminicon_book"
+              src="assets/icons/book.svg"
+            />Semester
+            <div id="sembtncont">
+              <div id="sembtnframe">
+                <button id="sem1" class="sembtn">1st</button>
+                <button id="sem2" class="sembtn">2nd</button>
+              </div>
+            </div>
+          </div>
+        </nav>
+        <button id="addacademicyear_btn">Add Academic Year</button>
+        <section class="allacademicyear_sec" id="allacademicyear_sec">
+          <div id="allacademicyear_div" class="allacademicyear_div"></div>
+        </section>
+        <div id="addacademicyear_div">
+          <input id="description_txt" placeholder="Enter Description" />
+          <button id="submitacademicyear">Submit</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Create Parseclass -->
+    <div id="createparseclass_div">
+      <div id="createparseclass_body">
+        <nav class="canceladdstudent_nav">
+          <button id="cancelcreateparseclass_btn">
+            <img
+              class="canceladdstudent_img"
+              src="assets/icons/arrow-left-solid.svg"
+            />
+          </button>
+        </nav>
+        <nav class="cancelcreateparseclass_header">
+          <label class="manage_lbl">Create ParseClass</label>
+        </nav>
+        <section id="create_sub">
+          <span class="margin_left_class" id="createparseclass_yr"
+            >Year: Sophomore (4th Year)</span
+          >
+          <span class="margin_left_class" id="createparseclass_sem"
+            >Semester: First</span
+          >
+        </section>
+
+        <section id="createparseclass_main">
+          <div id="parseclass_subjects">
+            <div class="sched" id="sched">
+              <div class="schedday">
+                <input
+                  class="sectionsched schedtxt"
+                  id="sectionsched_txt"
+                  type="text"
+                  placeholder="Section"
+                />
+                <input
+                  class="day schedtxt"
+                  id="day_txt"
+                  type="text"
+                  placeholder="Day Schedule"
+                />
+              </div>
+              <div class="schedtime">
+                <input
+                  class="start schedtxt"
+                  id="start_txt"
+                  type="text"
+                  placeholder="Time In"
+                />
+                <input
+                  class="end schedtxt"
+                  id="end_txt"
+                  type="text"
+                  placeholder="Time Out"
+                />
+              </div>
+            </div>
+            <div id="parseclass_list"></div>
+
+            <div id="addteacher_parseclass">
+              <img
+                class="sadminicon teachericon"
+                src="assets/icons/user-tie-solid.svg"
+              />
+              <input
+                id="assignTeacher_txt"
+                type="text"
+                placeholder="Teacher ID"
+              />
+              <button id="assignTeacher_btn">Assign</button>
+            </div>
+            <div id="addstudent_parseclass">
+              <img
+                class="sadminicon teachericon"
+                src="assets/icons/user-graduate-solid.svg"
+              />
+              <input id="addStudent_txt" type="text" placeholder="Student ID" />
+              <button id="addStudent_btn">Check</button>
+              <button id="viewStudent_btn" style="display: none">View</button>
+            </div>
+            <div id="addcluster_parseclass">
+              <img
+                class="sadminicon teachericon clustericon"
+                src="assets/icons/users-solid.svg"
+              />
+              <input
+                id="addCluster_txt"
+                type="text"
+                placeholder="Select Cluster"
+                disabled="true"
+              />
+              <button id="addCluster_btn">Select</button>
+            </div>
+            <button id="enrollParseclass">Submit</button>
+            <div
+              id="addScheduleStart_parseclass"
+              style="visibility: hidden"
+            ></div>
+            <div
+              id="addScheduleStart_parseclass"
+              style="visibility: hidden"
+            ></div>
+            <div
+              id="addScheduleStart_parseclass"
+              style="visibility: hidden"
+            ></div>
+
+            <div
+              id="addScheduleStart_parseclass"
+              style="visibility: hidden"
+            ></div>
+            <div
+              id="addScheduleStart_parseclass"
+              style="visibility: hidden"
+            ></div>
+          </div>
+        </section>
+      </div>
+    </div>
+
+    <div id="home_div">
+      <nav id="navbar">
+        <button id="nav_btn">
+          <img src="assets/icons/menu-icon-reg.png" class="nav_icon" />
+          <a class="navset_lbl" id="navset_lbl">Dashboard</a>
+        </button>
+      </nav>
+
+      <div id="body_div">
+        <div class="section_div" id="menu_div">
+          <!-- Manage Acad -->
+          <section class="option_sec" id="setsem_sec">
+            <button id="manageacad_btn">
+              <img class="sadminicon" src="assets/icons/calendar.svg" />Caesar
+              Cipher
+            </button>
+          </section>
+
+          <!-- Create ParseClass -->
+          <section class="option_sec" id="createParseclass_sec">
+            <button id="createParseclass_btn">
+              <img class="sadminicon" src="assets/icons/book.svg" />Vigenere
+              Cipher
+            </button>
+          </section>
+
+          <!-- Manage Admin -->
+          <section class="option_sec" id="manageadmin_sec">
+            <button id="manageadmin_btn">
+              <img
+                class="sadminicon"
+                src="assets/icons/code-fork-solid.svg"
+              />Playfair Cipher
+            </button>
+          </section>
+
+          <!-- Manage Teacher -->
+          <section class="option_sec" id="manageteacher_sec">
+            <button id="manageteacher_btn">
+              <img
+                class="sadminicon"
+                src="assets/icons/code-commit-solid.svg"
+              />Single Columnar Cipher
+            </button>
+          </section>
+
+          <!-- Manage Student -->
+          <section class="option_sec" id="managestudent_sec">
+            <button id="managestudent_btn">
+              <img class="sadminicon" src="assets/icons/code-solid.svg" />Double
+              Columnar Cipher
+            </button>
+          </section>
+
+          <!-- Manage Student -->
+          <section class="option_sec" id="managestudent_sec">
+            <button id="managestudent_btn">
+              <img class="sadminicon" src="assets/icons/gear-solid.svg" />AES
+              Cipher
+            </button>
+          </section>
+        </div>
+
+        <!-- Add Student -->
+        <div class="section_div" id="addstudent_div">
+          <nav class="canceladdstudent_nav">
+            <button id="canceladdstudent_btn">
+              <img
+                class="canceladdstudent_img"
+                src="assets/icons/arrow-left-solid.svg"
+              />
+            </button>
+          </nav>
+          <nav class="canceladdstudent_header">
+            <label class="manage_lbl">Add Student</label>
+          </nav>
+          <div id="formaddstudent_div">
+            <div class="input-wrap-regular input-regular" id="input-regular">
+              <div class="regular">
+                <input type="radio" name="regular" id="regular-radio-1" />
+                <span id="regular-1" value="">Regular</span>
+              </div>
+              <div class="regular">
+                <input type="radio" name="regular" id="regular-radio-2" />
+                <span id="regular-2" value="">Irregular</span>
+              </div>
+            </div>
+
+            <div class="input-wrap input-year">
+              <div class="year">
+                <input type="radio" name="year" id="first_radio" /> 1st Yr.
+              </div>
+              <div class="year">
+                <input type="radio" name="year" id="second_radio" /> 2nd Yr.
+              </div>
+              <div class="year">
+                <input type="radio" name="year" id="third_radio" /> 3rd Yr.
+              </div>
+              <div class="year">
+                <input type="radio" name="year" id="fourth_radio" /> 4th Yr.
+              </div>
+            </div>
+
+            <div class="input-wrap-section input-regular" id="input-section">
+              <div class="section">
+                <input type="radio" name="section" id="section-radio-1" />
+                <span id="section-1" value="">section</span>
+              </div>
+              <div class="section">
+                <input type="radio" name="section" id="section-radio-2" />
+                <span id="section-2" value="">section</span>
+              </div>
+            </div>
+
+            <div class="input-wrap">
+              <input
+                type="text"
+                class="input-txt"
+                id="id_txt"
+                placeholder="Enter Student ID"
+              />
+            </div>
+
+            <div class="input-wrap">
+              <input
+                type="text"
+                class="input-txt"
+                id="firstname_txt"
+                placeholder="Enter First Name"
+              />
+            </div>
+
+            <div class="input-wrap">
+              <input
+                type="text"
+                class="input-txt"
+                id="middlename_txt"
+                placeholder="Enter Middle Name"
+              />
+            </div>
+
+            <div class="input-wrap">
+              <input
+                type="text"
+                class="input-txt"
+                id="lastname_txt"
+                placeholder="Enter Last Name"
+              />
+            </div>
+
+            <div class="input-wrap">
+              <input
+                type="text"
+                class="input-txt"
+                id="suffix_txt"
+                placeholder="Enter Suffix Name"
+              />
+            </div>
+
+            <div class="input-wrap">
+              <input
+                type="text"
+                class="input-txt"
+                id="birthday_txt"
+                placeholder="Enter Birthday"
+              />
+            </div>
+
+            <div class="input-wrap">
+              <input
+                type="text"
+                class="input-txt"
+                id="email_txt"
+                placeholder="Enter Email Address"
+              />
+            </div>
+
+            <div class="input-wrap input-wrap-submitstudent">
+              <button id="submitstudent_btn">Submit</button>
+            </div>
+
+            <div class="input-wrap extra"></div>
+            <div class="input-wrap extra"></div>
+            <div class="input-wrap extra"></div>
+            <div class="input-wrap extra"></div>
+            <div class="input-wrap extra"></div>
+            <div class="input-wrap extra"></div>
+          </div>
+        </div>
+
+        <!-- Add Teacher -->
+        <div class="section_div" id="addteacher_div">
+          <nav class="canceladdstudent_nav">
+            <button id="canceladdteacher_btn">
+              <img
+                class="canceladdstudent_img"
+                src="assets/icons/arrow-left-solid.svg"
+              />
+            </button>
+          </nav>
+          <nav class="canceladdstudent_header">
+            <label class="manage_lbl">Add Teacher</label>
+          </nav>
+          <div id="formaddteacher_div">
+            <div class="input-wrap">
+              <input
+                type="text"
+                class="input-txt"
+                id="id_teacher_txt"
+                placeholder="Enter Teacher ID"
+              />
+            </div>
+
+            <div class="input-wrap">
+              <input
+                type="text"
+                class="input-txt"
+                id="firstname_teacher_txt"
+                placeholder="Enter First Name"
+              />
+            </div>
+
+            <div class="input-wrap">
+              <input
+                type="text"
+                class="input-txt"
+                id="middlename_teacher_txt"
+                placeholder="Enter Middle Name"
+              />
+            </div>
+
+            <div class="input-wrap">
+              <input
+                type="text"
+                class="input-txt"
+                id="lastname_teacher_txt"
+                placeholder="Enter Last Name"
+              />
+            </div>
+
+            <div class="input-wrap">
+              <input
+                type="text"
+                class="input-txt"
+                id="suffix_teacher_txt"
+                placeholder="Enter Suffix Name"
+              />
+            </div>
+
+            <div class="input-wrap">
+              <input
+                type="text"
+                class="input-txt"
+                id="birthday_teacher_txt"
+                placeholder="Enter Birthday"
+              />
+            </div>
+
+            <div class="input-wrap">
+              <input
+                type="text"
+                class="input-txt"
+                id="email_teacher_txt"
+                placeholder="Enter Email Address"
+              />
+            </div>
+
+            <div class="input-wrap input-wrap-submitstudent">
+              <button id="submitteacher_btn">Submit</button>
+            </div>
+
+            <div class="input-wrap extra"></div>
+            <div class="input-wrap extra"></div>
+            <div class="input-wrap extra"></div>
+            <div class="input-wrap extra"></div>
+            <div class="input-wrap extra"></div>
+            <div class="input-wrap extra"></div>
+          </div>
+        </div>
+
+        <!-- Add Admin -->
+        <div class="section_div" id="addadmin_div">
+          <nav class="canceladdstudent_nav">
+            <button id="canceladdadmin_btn">
+              <img
+                class="canceladdstudent_img"
+                src="assets/icons/arrow-left-solid.svg"
+              />
+            </button>
+          </nav>
+          <nav class="canceladdstudent_header">
+            <label class="manage_lbl">Add Admin</label>
+          </nav>
+          <div id="formaddadmin_div">
+            <div class="input-wrap">
+              <input
+                type="text"
+                class="input-txt"
+                id="id_admin_txt"
+                placeholder="Enter Admin ID"
+              />
+            </div>
+
+            <div class="input-wrap">
+              <input
+                type="text"
+                class="input-txt"
+                id="firstname_admin_txt"
+                placeholder="Enter First Name"
+              />
+            </div>
+
+            <div class="input-wrap">
+              <input
+                type="text"
+                class="input-txt"
+                id="middlename_admin_txt"
+                placeholder="Enter Middle Name"
+              />
+            </div>
+
+            <div class="input-wrap">
+              <input
+                type="text"
+                class="input-txt"
+                id="lastname_admin_txt"
+                placeholder="Enter Last Name"
+              />
+            </div>
+
+            <div class="input-wrap">
+              <input
+                type="text"
+                class="input-txt"
+                id="suffix_admin_txt"
+                placeholder="Enter Suffix Name"
+              />
+            </div>
+
+            <div class="input-wrap">
+              <input
+                type="text"
+                class="input-txt"
+                id="birthday_admin_txt"
+                placeholder="Enter Birthday"
+              />
+            </div>
+
+            <div class="input-wrap">
+              <input
+                type="text"
+                class="input-txt"
+                id="email_admin_txt"
+                placeholder="Enter Email Address"
+              />
+            </div>
+
+            <div class="input-wrap input-wrap-submitstudent">
+              <button id="submitadmin_btn">Submit</button>
+            </div>
+
+            <div class="input-wrap extra"></div>
+            <div class="input-wrap extra"></div>
+            <div class="input-wrap extra"></div>
+            <div class="input-wrap extra"></div>
+            <div class="input-wrap extra"></div>
+            <div class="input-wrap extra"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script type="module" src="homepage.js"></script>
+  </body>
+</html>

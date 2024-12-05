@@ -1,0 +1,37 @@
+@font-face {
+  font-family: "Inter-Regular";
+  src: url("assets/fonts/Inter-Regular.otf");
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #171717;
+  width: 100vw;
+  height: 100vh;
+}
+
+.loading-animation-div {
+  height: 100%;
+  width: 100%;
+  background-color: #171717;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  background-image: url(assets/bg-img.png);
+  background-position: center;
+  background-size: cover;
+}
+
+.loading_animation_gif {
+  height: 15px;
+  width: 120px;
+}
+
+.parsing_lbl {
+  font-family: Inter-Regular;
+  color: #fefefe;
+  margin-top: 15px;
+  font-size: 12px;
+}
